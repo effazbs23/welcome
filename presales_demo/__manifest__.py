@@ -6,6 +6,7 @@
     'depends': ['sale'],
     'data': [
         'views/sale_order_views.xml',
+        'views/sale_order_nunur_views.xml',
     ],
     'installable': True,
     'application': False,
