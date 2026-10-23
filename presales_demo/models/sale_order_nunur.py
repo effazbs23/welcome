@@ -9,3 +9,9 @@ class SaleOrder(models.Model):
         string='Nunur Size',
         help='Custom size information for Nunur specific sales.'
     )
+
+    # New field to store the delivery date (used in the list view)
+    x_delivery_date = fields.Date(
+        string='Delivery Date',
+        help='Expected delivery date for the sale order.'
+    )

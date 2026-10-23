@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Add Nunur Size to the Sale Order tree (list) view -->
+    <!-- Inherit the standard Sale Order tree (list) view and add the Delivery Date column -->
     <record id="view_sale_order_tree_nunur" model="ir.ui.view">
         <field name="name">sale.order.tree.nunur</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="arch" type="xml">
-            <!-- Insert the field as a new column in the tree view -->
-            <xpath expr="//tree" position="inside">
-                <field name="nunur_size"/>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Add Nunur Size to the Sale Order form view -->
-    <record id="view_sale_order_form_nunur" model="ir.ui.view">
-        <field name="name">sale.order.form.nunur</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
-        <field name="arch" type="xml">
+            <!-- Insert the field after the existing 'date_order' column -->
             <xpath expr="//field[@name='date_order']" position="after">
-                <field name="nunur_size"/>
+                <field name="x_delivery_date"/>
             </xpath>
         </field>
     </record>
