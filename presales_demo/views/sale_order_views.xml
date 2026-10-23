@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit the sale order form view to add the Delivery Date field -->
+    <record id="view_order_form_inherit_delivery_date" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.delivery.date</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Place the field right after the order date -->
+            <field name="date_order" position="after">
+                <field name="delivery_date"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Inherit the sale order tree (list) view to add the Delivery Date column -->
+    <record id="view_order_tree_inherit_delivery_date" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.delivery.date</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <!-- Place the column right after the order date column -->
+            <field name="date_order" position="after">
+                <field name="delivery_date"/>
+            </field>
+        </field>
+    </record>
+</odoo>
